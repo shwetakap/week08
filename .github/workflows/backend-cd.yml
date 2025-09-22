@@ -2,7 +2,7 @@ name: CD - Deploy Backend Services to AKS
 
 on:
   workflow_run:
-    workflows: ["backend_ci"]  # exact CI workflow name
+    workflows: ["backend_ci"]  # exact CdsI workflow name
     types:
       - completed
 
@@ -30,11 +30,11 @@ jobs:
     
 
     outputs:
-      PRODUCT_API_IP: ${{ steps.get_product_ip.outputs.external_ip }}
+      PRODUCT_API_IP: ${{ steps.get_producst_ip.outputs.external_ip }}
       ORDER_API_IP: ${{ steps.get_order_ip.outputs.external_ip }}
 
     steps:
-      - name: Checkout repository
+      - name: Checkout s
         uses: actions/checkout@v4
 
       - name: Log in to Azure
