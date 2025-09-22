@@ -30,7 +30,7 @@ jobs:
     env:
       AKS_CLUSTER_NAME: ${{ github.event.inputs.aks_cluster_name || 'sk8-aks' }}
       AKS_RESOURCE_GROUP: ${{ github.event.inputs.aks_resource_group || 'sk8-rg' }}
-      AKS_ACR_NAME: ${{ github.event.inputs.aks_acr_name || 'skacr8.azurecr.io' }}
+      AKS_ACR_NAME: ${{ github.event.inputs.aks_acr_name || 'skacr8' }}
 
     outputs:
       PRODUCT_API_IP: ${{ steps.get_product_ip.outputs.external_ip }}
