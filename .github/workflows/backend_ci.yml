@@ -5,19 +5,17 @@ name: Backend CI - Test, Build and Push Images to ACR
 # Trigger the workflow on pushes to the 'main' branch
 # You can also add 'pull_request:' to run on PRs
 on:
-push:
+  
+  # Automatically on pushes to main branch
+  push:
     branches:
       - main
      # Manual trigger
-  # Manual trigger
-  
-
-  # Automatically on pushes to main branch
-
-    paths: # Only trigger if changes are in backend directories
+  workflow_dispatch:
+    paths: # Only trigger if changes are in the backend directory
       - 'backend/**'
       - '.github/workflows/backend_ci.yml' # Trigger if this workflow file changes
-workflow_dispatch:
+
 # Define global environment variables that can be used across jobs
 env:
   # ACr Login Server (e.g., myregistry.azurecr.io)
