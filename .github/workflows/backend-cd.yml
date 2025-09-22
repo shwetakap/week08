@@ -19,7 +19,7 @@ on:
       aks_acr_name:
         description: 'Name of ACR'
         required: true
-        default: 'skacr8.azurecr.io'
+        default: 'skacr8'
 
 jobs:
   deploy_backend:
