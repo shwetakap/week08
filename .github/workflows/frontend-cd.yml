@@ -6,7 +6,9 @@ on:
     workflows: ["CD - Deploy Backend Services to AKS"]
     types:
       - completed
-
+  push:
+    branches:
+      - main 
   # Allow manual trigger
   workflow_dispatch:
     inputs:

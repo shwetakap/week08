@@ -8,6 +8,9 @@ on:
   # Automatically on pushes to main branch
   push:
     branches:
+      - development
+  pull:
+    branches:
       - main
      # Manual trigger
   workflow_dispatch:

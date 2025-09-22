@@ -5,7 +5,10 @@ on:
     workflows: ["Backend CI - Test, Build and Push Images to ACR"] # exact CI workflow name
     types:
       - completed
-
+  
+  push:
+    branches:
+      - main 
   workflow_dispatch:
     inputs:
       aks_cluster_name:
