@@ -3,13 +3,14 @@
 name: Frontend CI - Build & Push Image
 
 on:
-  # Manual trigger
-  workflow_dispatch:
+ 
 
   # Automatically on pushes to main branch
   push:
     branches:
       - main
+     # Manual trigger
+  workflow_dispatch:
     paths: # Only trigger if changes are in the frontend directory
       - 'frontend/**'
       - '.github/workflows/frontend_ci.yml' # Trigger if this workflow file changes
