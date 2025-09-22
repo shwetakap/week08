@@ -24,9 +24,14 @@ on:
 
 
 jobs:
+  
   deploy_backend:
     runs-on: ubuntu-latest
     environment: Production
+    env:
+      AKS_CLUSTER_NAME: ${{ github.event.inputs.aks_cluster_name || 'sk8-aks' }}
+      AKS_RESOURCE_GROUP: ${{ github.event.inputs.aks_resource_group || 'sk8-rg' }}
+      AKS_ACR_NAME: ${{ github.event.inputs.aks_acr_name || 'skacr8.azurecr.io' }}
     
 
     outputs:
