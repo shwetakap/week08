@@ -23,6 +23,10 @@ on:
         description: 'Resource Group of the AKS Cluster'
         required: true
         default: '<<resource_group_name>'
+  workflow_run:
+    workflows: ["backend-cd"]   # name of backend workflow
+    types:
+      - completed
    
 
 
@@ -44,7 +48,6 @@ on:
 jobs:
   deploy_frontend:
     runs-on: ubuntu-latest
-    needs: frontend-ci
     environment: Production
 
     steps:
