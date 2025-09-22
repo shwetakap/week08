@@ -109,7 +109,7 @@ jobs:
         run: |
           pytest tests --maxfail=1 --disable-warnings -q
 
-  # Job 2: Build and Push Docker Images (runs only if tests pass)
+  # Job 2: Build and Push Dockers Images (runs only if tests pass)
   build_and_push_images:
     runs-on: ubuntu-latest
     needs: test_and_lint_backends
