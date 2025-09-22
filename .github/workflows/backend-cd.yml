@@ -1,6 +1,10 @@
 name: CD - Deploy Backend Services to AKS
 
 on:
+  push:
+    branches:
+      - main
+
   workflow_dispatch:
     inputs:
       aks_cluster_name:
