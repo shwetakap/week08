@@ -5,10 +5,14 @@ name: CD - Deploy Frontend to AKS
 # This workflow can be called by other workflows and takes inputs.
 # Or it can be run manually if you provide the IPs.
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["backend_ci"]  # exact CI workflow name
+    types:
+      - completed
+
+
   workflow_dispatch:
+  
     inputs:
       product_api_ip:
         description: 'External IP of Product Service'
@@ -26,10 +30,8 @@ on:
         description: 'Resource Group of the AKS Cluster'
         required: true
         default: '<<resource_group_name>'
-  workflow_run:
-    workflows: ["backend-cd"]   # name of backend workflow
-    types:
-      - completed
+ 
+
    
 
 
