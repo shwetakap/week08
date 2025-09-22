@@ -2,7 +2,7 @@ name: CD - Deploy Backend Services to AKS
 
 on:
   workflow_run:
-    workflows: ["backend_ci"]  # exact CdsI workflow name
+    workflows: ["Backend CI - Test, Build and Push Images to ACR"]  # exact CdsI workflow name
     types:
       - completed
 

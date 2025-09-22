@@ -6,7 +6,7 @@ name: CD - Deploy Frontend to AKS
 # Or it can be run manually if you provide the IPs.
 on:
   workflow_run:
-    workflows: ["backend_ci"]  # exact CI workflow name
+    workflows: ["Frontend CI - Build & Push Image"]  # exact CI workflow name
     types:
       - completed
 
